@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: mi-heatguard-demo
+    runtime: static
+    staticPublishPath: ./public
+    buildCommand: echo "Static site, no build step"
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: Referrer-Policy
+        value: no-referrer
